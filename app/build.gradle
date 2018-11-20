@@ -23,6 +23,12 @@ android {
 dependencies {
     implementation feature.commonAndroid
 
-    implementation androidDependencies.kotlin
     implementation androidDependencies.appCompat
+
+    implementation androidDependencies.kotlin
+    implementation androidDependencies.coroutines
+
+    implementation androidDependencies.koin
+    implementation androidDependencies.koinKtx
+    implementation androidDependencies.koinAndroid
 }

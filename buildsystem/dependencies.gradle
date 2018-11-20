@@ -1,10 +1,16 @@
 ext {
     ktor_version = '1.0.0'
     appcompat_version = "1.0.2"
+    coroutines_version = "1.0.1"
+    koin_version = '1.0.2'
 
     androidDependencies = [
-            kotlin   : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
-            appCompat: "androidx.appcompat:appcompat:$appcompat_version"
+            kotlin     : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            appCompat  : "androidx.appcompat:appcompat:$appcompat_version",
+            coroutines : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version",
+            koin       : "org.koin:koin-core:$koin_version",
+            koinKtx    : "org.koin:koin-core-ext:$koin_version",
+            koinAndroid: "org.koin:koin-android:$koin_version"
     ]
 
     common = [
