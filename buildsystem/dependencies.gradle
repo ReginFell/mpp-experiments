@@ -1,0 +1,25 @@
+ext {
+    ktor_version = '1.0.0'
+    appcompat_version = "1.0.2"
+
+    androidDependencies = [
+            kotlin   : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            appCompat: "androidx.appcompat:appcompat:$appcompat_version"
+    ]
+
+    common = [
+            ktor  : "io.ktor:ktor-client-android:$ktor_version",
+            stdlib: "org.jetbrains.kotlin:kotlin-stdlib-common",
+    ]
+
+    commonAndroid = [
+            stdlib: "org.jetbrains.kotlin:kotlin-stdlib-jdk8",
+            ktor  : "io.ktor:ktor-client:$ktor_version",
+    ]
+
+    feature = [
+            common       : project(':common'),
+            commonAndroid: project(":common-jvm")
+    ]
+
+}

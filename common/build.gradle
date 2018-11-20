@@ -1,5 +1,7 @@
 apply plugin: 'kotlin-platform-common'
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-common"
+    implementation common.stdlib
+
+    implementation common.ktor
 }
