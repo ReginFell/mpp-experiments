@@ -1,13 +1,14 @@
-package com.regin.additivefood
+package com.regin.additivefood.application
 
-import com.regin.additive.api.Api
+import com.regin.additivefood.api.Api
 import org.koin.dsl.module.module
 
 val applicationModule = module {
     single {
         Api.Builder()
             .baseUrl(getProperty("baseUrl"))
-            .coroutineScope(getProperty("coroutineScope"))
+            .language(getProperty("language"))
+            .appScope(getProperty("appScope"))
             .build()
     }
 }

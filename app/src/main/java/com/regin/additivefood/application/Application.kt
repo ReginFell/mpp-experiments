@@ -1,4 +1,4 @@
-package com.regin.additivefood
+package com.regin.additivefood.application
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
@@ -16,9 +16,9 @@ class Application : AndroidApplication(), CoroutineScope {
     override fun onCreate() {
         super.onCreate()
         startKoin(
-            listOf(applicationModule), KoinProperties(
-                extraProperties =
-                mapOf(Pair("baseUrl", "https://tools.ietf.org"), Pair("coroutineScope", this))
+            listOf(applicationModule, navigationModule), KoinProperties(
+                useKoinPropertiesFile = true,
+                extraProperties = mapOf(Pair("appScope", this))
             )
         )
     }

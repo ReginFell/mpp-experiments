@@ -3,14 +3,21 @@ ext {
     appcompat_version = "1.0.2"
     coroutines_version = "1.0.1"
     koin_version = '1.0.2'
+    viewmodel_version = "2.0.0"
+    cicerone_version = "4.0.2"
+    navigation_version = "1.0.0-alpha07"
 
     androidDependencies = [
-            kotlin     : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
-            appCompat  : "androidx.appcompat:appcompat:$appcompat_version",
-            coroutines : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version",
-            koin       : "org.koin:koin-core:$koin_version",
-            koinKtx    : "org.koin:koin-core-ext:$koin_version",
-            koinAndroid: "org.koin:koin-android:$koin_version"
+            kotlin       : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            appCompat    : "androidx.appcompat:appcompat:$appcompat_version",
+            coroutines   : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version",
+            koin         : "org.koin:koin-core:$koin_version",
+            koinKtx      : "org.koin:koin-core-ext:$koin_version",
+            koinAndroid  : "org.koin:koin-android:$koin_version",
+            koinViewModel: "org.koin:koin-android-viewmodel:$koin_version",
+            viewModel    : "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewmodel_version",
+            cicerone     : "ru.terrakok.cicerone:cicerone:$cicerone_version",
+            navigation   : "android.arch.navigation:navigation-fragment:$navigation_version",
     ]
 
     common = [
@@ -24,8 +31,8 @@ ext {
     ]
 
     feature = [
-            common       : project(':common'),
-            commonAndroid: project(":common-jvm")
+            common       : project(':shared'),
+            commonAndroid: project(":shared-jvm")
     ]
 
 }

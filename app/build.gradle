@@ -24,6 +24,9 @@ dependencies {
     implementation feature.commonAndroid
 
     implementation androidDependencies.appCompat
+    implementation androidDependencies.viewModel
+    implementation androidDependencies.cicerone
+    implementation androidDependencies.navigation
 
     implementation androidDependencies.kotlin
     implementation androidDependencies.coroutines
@@ -31,4 +34,5 @@ dependencies {
     implementation androidDependencies.koin
     implementation androidDependencies.koinKtx
     implementation androidDependencies.koinAndroid
+    implementation androidDependencies.koinViewModel
 }
