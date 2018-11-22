@@ -1,16 +1,16 @@
 package com.regin.additivefood.feature.splash
 
-import android.util.Log
+import com.regin.additivefood.feature.home.HomeScreen
 import com.regin.additivefood.ui.BaseViewModel
 import kotlinx.coroutines.launch
+import ru.terrakok.cicerone.Router
 
-class SplashViewModel(private val splashUseCase: SplashUseCase) : BaseViewModel() {
+class SplashViewModel(
+    private val splashUseCase: SplashUseCase
+) : BaseViewModel() {
 
     init {
         launch {
-            splashUseCase.start {
-                Log.i("One one one", "this is test")
-            }
-        }
+            splashUseCase.start {}
     }
-}
+}}

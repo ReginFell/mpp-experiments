@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/nav_graph">
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/main_graph"
+            app:startDestination="@id/splashFragment">
+
+    <fragment android:id="@+id/splashFragment"
+              tools:layout="@layout/fragment_splash"
+              android:name="com.regin.additivefood.feature.splash.SplashFragment">
+
+        <action app:destination="@id/homeFragment"
+                android:id="@+id/splashToHome"/>
+    </fragment>
+
+    <fragment android:id="@+id/homeFragment"
+              android:name="com.regin.additivefood.feature.home.HomeFragment"/>
 
 </navigation>
