@@ -24,6 +24,8 @@ dependencies {
     implementation feature.commonAndroid
 
     implementation androidDependencies.appCompat
+    implementation androidDependencies.materialDesign
+
     implementation androidDependencies.viewModel
     implementation androidDependencies.cicerone
     implementation androidDependencies.navigation

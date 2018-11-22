@@ -9,7 +9,7 @@ const val scopeId = "Splash"
 
 val splashModule = module {
     scope(scopeId) { SplashUseCase(get()) }
-    scope(scopeId) { SplashViewModel(get()) }
+    scope(scopeId) { SplashViewModel(get(), get()) }
 }
 
 fun SplashFragment.loadModule() {
