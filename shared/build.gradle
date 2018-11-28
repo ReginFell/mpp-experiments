@@ -10,23 +10,21 @@ kotlin {
         commonMain.dependencies {
             implementation deps.kotlin.stdlib.common
 
-            implementation deps.ktor.core
-
-            implementation deps.sqldelight.runtime.common
+            api deps.ktor.core
+            api deps.sqldelight.runtime.common
         }
 
         androidMain.dependencies {
             implementation deps.kotlin.stdlib.jdk
 
-            implementation deps.ktor.android
-
-            implementation deps.sqldelight.runtime.jvm
+            api deps.ktor.android
+            api deps.sqldelight.runtime.jvm
         }
     }
 }
 
 sqldelight {
-    packageName = 'com.regin.additivefood.model'
+    packageName = 'com.regin.additivefood.db'
 }
 
 configurations {

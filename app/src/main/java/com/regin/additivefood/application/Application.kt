@@ -1,7 +1,10 @@
 package com.regin.additivefood.application
 
+import com.facebook.stetho.Stetho
 import com.regin.additivefood.application.di.applicationModule
+import com.regin.additivefood.application.di.databaseModule
 import com.regin.additivefood.application.di.navigationModule
+import com.regin.additivefood.application.di.repositoryModule
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import org.koin.core.KoinProperties
@@ -17,13 +20,20 @@ class Application : AndroidApplication(), CoroutineScope {
 
     override fun onCreate() {
         super.onCreate()
+        Stetho.initializeWithDefaults(this)
+
         startKoin(
             listOf(
                 applicationModule,
-                navigationModule
+                navigationModule,
+                databaseModule,
+                repositoryModule
             ), KoinProperties(
                 useKoinPropertiesFile = true,
-                extraProperties = mapOf(Pair("appScope", this))
+                extraProperties = mapOf(
+                    Pair("applicationContext", this),
+                    Pair("appScope", this as CoroutineScope)
+                )
             )
         )
     }

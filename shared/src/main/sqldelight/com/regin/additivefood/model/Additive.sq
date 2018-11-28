@@ -1,4 +1,11 @@
 CREATE TABLE additive (
     _id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    title INTEGER NOT NULL
+    title TEXT NOT NULL
 );
+
+insertItem:
+INSERT OR FAIL INTO additive(title) VALUES (?);
+
+selectAll:
+SELECT *
+FROM additive;
