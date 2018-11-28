@@ -8,7 +8,7 @@ import org.koin.standalone.StandAloneContext
 const val scopeId = "Home"
 
 val homeModule = module {
-    scope(scopeId) { HomeViewModel() }
+    scope(scopeId) { HomeViewModel(get()) }
 }
 
 fun HomeFragment.loadModule() {

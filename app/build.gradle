@@ -21,20 +21,23 @@ android {
 }
 
 dependencies {
-    implementation feature.commonAndroid
+    api feature.sharedJvm
 
-    implementation androidDependencies.appCompat
-    implementation androidDependencies.materialDesign
+    implementation deps.androidx.appCompat
+    implementation deps.androidx.viewModel
 
-    implementation androidDependencies.viewModel
-    implementation androidDependencies.cicerone
-    implementation androidDependencies.navigation
+    implementation deps.material
 
-    implementation androidDependencies.kotlin
-    implementation androidDependencies.coroutines
+    implementation deps.cicerone
+    implementation deps.navigation
 
-    implementation androidDependencies.koin
-    implementation androidDependencies.koinKtx
-    implementation androidDependencies.koinAndroid
-    implementation androidDependencies.koinViewModel
+    implementation deps.kotlin.stdlib.jdk
+    implementation deps.coroutines.android
+
+    implementation deps.koin.core
+    implementation deps.koin.ktx
+    implementation deps.koin.android
+    implementation deps.koin.viewModel
+
+    implementation deps.sqldelight.android
 }

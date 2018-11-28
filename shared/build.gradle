@@ -1,7 +1,9 @@
 apply plugin: 'kotlin-platform-common'
+apply plugin: 'com.squareup.sqldelight'
 
 dependencies {
-    implementation common.stdlib
+    implementation deps.kotlin.stdlib.common
 
-    implementation common.ktor
+    api deps.ktor.core
+    implementation deps.sqldelight.runtime.common
 }

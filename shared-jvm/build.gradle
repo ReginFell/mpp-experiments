@@ -1,7 +1,10 @@
 apply plugin: 'kotlin-platform-jvm'
 
 dependencies {
-    expectedBy feature.common
+    expectedBy feature.shared
 
-    implementation commonAndroid.stdlib
+    implementation deps.kotlin.stdlib.jdk
+
+    implementation deps.ktor.android
+    api deps.sqldelight.runtime.jvm
 }

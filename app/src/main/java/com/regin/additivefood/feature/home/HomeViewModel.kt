@@ -20,6 +20,4 @@ class HomeViewModel(private val api: Api) : BaseViewModel() {
     private fun loadAdditive() {
 
     }
-
-
 }

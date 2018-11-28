@@ -1,5 +1,7 @@
 package com.regin.additivefood.application
 
+import com.regin.additivefood.application.di.applicationModule
+import com.regin.additivefood.application.di.navigationModule
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import org.koin.core.KoinProperties
@@ -16,7 +18,10 @@ class Application : AndroidApplication(), CoroutineScope {
     override fun onCreate() {
         super.onCreate()
         startKoin(
-            listOf(applicationModule, navigationModule), KoinProperties(
+            listOf(
+                applicationModule,
+                navigationModule
+            ), KoinProperties(
                 useKoinPropertiesFile = true,
                 extraProperties = mapOf(Pair("appScope", this))
             )

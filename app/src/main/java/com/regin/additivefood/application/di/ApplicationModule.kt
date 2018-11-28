@@ -1,4 +1,4 @@
-package com.regin.additivefood.application
+package com.regin.additivefood.application.di
 
 import com.regin.additivefood.api.Api
 import kotlinx.coroutines.CoroutineScope
