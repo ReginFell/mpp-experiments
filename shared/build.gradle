@@ -1,9 +1,34 @@
-apply plugin: 'kotlin-platform-common'
+apply plugin: 'kotlin-multiplatform'
 apply plugin: 'com.squareup.sqldelight'
 
-dependencies {
-    implementation deps.kotlin.stdlib.common
+kotlin {
+    targets {
+        fromPreset(presets.jvm, 'android')
+    }
 
-    api deps.ktor.core
-    implementation deps.sqldelight.runtime.common
+    sourceSets {
+        commonMain.dependencies {
+            implementation deps.kotlin.stdlib.common
+
+            implementation deps.ktor.core
+
+            implementation deps.sqldelight.runtime.common
+        }
+
+        androidMain.dependencies {
+            implementation deps.kotlin.stdlib.jdk
+
+            implementation deps.ktor.android
+
+            implementation deps.sqldelight.runtime.jvm
+        }
+    }
+}
+
+sqldelight {
+    packageName = 'com.regin.additivefood.model'
+}
+
+configurations {
+    compileClasspath
 }

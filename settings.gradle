@@ -1,1 +1,1 @@
-include ':app', ':shared', ':shared-jvm'
+include ':app', ':shared'

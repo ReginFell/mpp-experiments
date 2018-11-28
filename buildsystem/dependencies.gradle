@@ -45,6 +45,5 @@ ext.deps = [
 ]
 
 ext.feature = [
-        shared   : project(':shared'),
-        sharedJvm: project(":shared-jvm")
+        shared: project(':shared'),
 ]
