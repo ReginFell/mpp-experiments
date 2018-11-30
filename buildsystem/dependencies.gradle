@@ -4,6 +4,7 @@ ext.versions = [
         'koin'            : '1.0.2',
         'kotlinCoroutines': '1.0.1',
         'sqlDelight'      : '1.0.0-rc4',
+        'logging'         : '1.6.10'
 ]
 
 ext.deps = [
@@ -12,6 +13,13 @@ ext.deps = [
                         'common': "org.jetbrains.kotlin:kotlin-stdlib-common:${versions.kotlin}",
                         'jdk'   : "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}",
                 ],
+        ],
+        'kotlinx'   : [
+                'serilization': 'org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.9.0'
+        ],
+        'logging'   : [
+                common: "io.github.microutils:kotlin-logging-common:${versions.logging}",
+                jvm   : "io.github.microutils:kotlin-logging:${versions.logging}"
         ],
         'koin'      : [
                 'core'     : "org.koin:koin-core:${versions.koin}",
@@ -29,8 +37,10 @@ ext.deps = [
                 'viewModel': "androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0",
         ],
         'ktor'      : [
-                'core'   : "io.ktor:ktor-client:${versions.ktor}",
-                'android': "io.ktor:ktor-client-android:${versions.ktor}"
+                'core'      : "io.ktor:ktor-client:${versions.ktor}",
+                'jvm'       : "io.ktor:ktor-client-json-jvm:${versions.ktor}",
+                'serializer': "io.ktor:ktor-client-json:${versions.ktor}",
+                'android'   : "io.ktor:ktor-client-android:${versions.ktor}"
         ],
         'material'  : 'com.google.android.material:material:1.0.0',
         'cicerone'  : 'ru.terrakok.cicerone:cicerone:4.0.2',
@@ -38,7 +48,7 @@ ext.deps = [
         'sqldelight': [
                 'android': "com.squareup.sqldelight:android-driver:${versions.sqlDelight}",
                 'runtime': [
-                        'common': "com.squareup.sqldelight:runtime:${versions.sqlDelight}",
+                        'common': "com.squareup.sqldelight:runtime-metadata:${versions.sqlDelight}",
                         'jvm'   : "com.squareup.sqldelight:runtime-jvm:${versions.sqlDelight}",
                 ],
         ],

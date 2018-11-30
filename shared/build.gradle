@@ -1,4 +1,5 @@
 apply plugin: 'kotlin-multiplatform'
+apply plugin: 'kotlinx-serialization'
 apply plugin: 'com.squareup.sqldelight'
 
 kotlin {
@@ -10,15 +11,22 @@ kotlin {
         commonMain.dependencies {
             implementation deps.kotlin.stdlib.common
 
-            api deps.ktor.core
-            api deps.sqldelight.runtime.common
+            implementation deps.kotlinx.serilization
+
+            implementation deps.ktor.core
+            implementation deps.ktor.serializer
+            implementation deps.sqldelight.runtime.common
+
+            implementation deps.logging.common
         }
 
         androidMain.dependencies {
             implementation deps.kotlin.stdlib.jdk
 
-            api deps.ktor.android
-            api deps.sqldelight.runtime.jvm
+            implementation deps.ktor.jvm
+            implementation deps.sqldelight.runtime.jvm
+
+            implementation deps.logging.jvm
         }
     }
 }
