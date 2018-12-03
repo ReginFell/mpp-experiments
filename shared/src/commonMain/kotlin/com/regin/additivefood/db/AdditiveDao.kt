@@ -1,23 +1,23 @@
 package com.regin.additivefood.db
 
-import com.regin.additivefood.api.model.AdditiveResource
+import com.regin.additivefood.db.model.Additive
 
-class AdditiveDao(private val queryWrapper: QueryWrapper) {
+class AdditiveDao(queryWrapper: QueryWrapper) {
 
     private val db = queryWrapper.additiveQueries
 
-    suspend fun insert(items: List<AdditiveResource>) {
+     internal fun insert(items: List<Additive>) {
         db.transaction {
             for (item in items) {
-                val affected = db.insertItem(item.title)
+                insert(item)
             }
         }
     }
 
-    suspend fun insert(item: AdditiveResource) {
+    internal fun insert(item: Additive) {
         db.insertItem(
-            title = item.title
+            id = item.id,
+            name = item.name
         )
     }
-
 }

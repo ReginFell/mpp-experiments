@@ -1,10 +1,7 @@
 package com.regin.additivefood.application
 
 import com.facebook.stetho.Stetho
-import com.regin.additivefood.application.di.applicationModule
-import com.regin.additivefood.application.di.databaseModule
-import com.regin.additivefood.application.di.navigationModule
-import com.regin.additivefood.application.di.repositoryModule
+import com.regin.additivefood.application.di.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import org.koin.core.KoinProperties
@@ -25,6 +22,7 @@ class Application : AndroidApplication(), CoroutineScope {
         startKoin(
             listOf(
                 applicationModule,
+                networkModule,
                 navigationModule,
                 databaseModule,
                 repositoryModule

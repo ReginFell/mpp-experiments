@@ -48,7 +48,14 @@ dependencies {
     implementation deps.koin.android
     implementation deps.koin.viewModel
 
-    implementation deps.ktor.android
+    implementation deps.ktor.okHttp
+
+    implementation deps.okHttp.logging
 
     implementation deps.sqldelight.android
+
+    //TODO temporary fix
+    compileOnly feature.shared
+    compileOnly deps.ktor.core
+    compileOnly deps.ktor.jvm
 }

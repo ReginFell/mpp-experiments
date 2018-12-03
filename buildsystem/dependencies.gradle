@@ -40,7 +40,10 @@ ext.deps = [
                 'core'      : "io.ktor:ktor-client:${versions.ktor}",
                 'jvm'       : "io.ktor:ktor-client-json-jvm:${versions.ktor}",
                 'serializer': "io.ktor:ktor-client-json:${versions.ktor}",
-                'android'   : "io.ktor:ktor-client-android:${versions.ktor}"
+                'okHttp'    : "io.ktor:ktor-client-okhttp:${versions.ktor}"
+        ],
+        'okHttp'    : [
+                'logging': 'com.squareup.okhttp3:logging-interceptor:3.12.0'
         ],
         'material'  : 'com.google.android.material:material:1.0.0',
         'cicerone'  : 'ru.terrakok.cicerone:cicerone:4.0.2',
