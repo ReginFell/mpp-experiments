@@ -32,7 +32,7 @@ class AdditiveAdapter : ListAdapter<Additive, AdditiveAdapter.ViewHolder>(ItemCa
 
     private object ItemCallback : DiffUtil.ItemCallback<Additive>() {
         override fun areItemsTheSame(oldItem: Additive, newItem: Additive): Boolean {
-            return oldItem._id == newItem._id
+            return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(oldItem: Additive, newItem: Additive): Boolean {
