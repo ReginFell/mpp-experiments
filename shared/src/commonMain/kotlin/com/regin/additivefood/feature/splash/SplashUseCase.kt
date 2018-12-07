@@ -12,6 +12,6 @@ class SplashUseCase(private val appScope: CoroutineScope) {
     }
 
     companion object {
-        private const val DELAY_TIME_MS = 0L
+        private const val DELAY_TIME_MS = 5000L
     }
 }
